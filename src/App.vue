@@ -31,11 +31,13 @@ onMounted(async () => {
 <template>
   <h1>Users from MongoDB</h1>
   <DataTable
+      v-if="loading"
       :value="storeUser.userList"
       tableStyle="min-width: 50rem"
   >
     <Column v-for="col of columns" :key="col.field" :field="col.field" :header="col.header"></Column>
   </DataTable>
+
   <Button label="Submit" />
 </template>
 
